@@ -1,0 +1,12 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: kyverno-vpa
+subjects:
+- kind: ServiceAccount
+  name: kyverno-background-controller
+  namespace: kyverno
+roleRef:
+  kind: ClusterRole
+  name: kyverno-vpa
+  apiGroup: "rbac.authorization.k8s.io"
